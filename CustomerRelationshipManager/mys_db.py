@@ -1,10 +1,12 @@
 import mysql.connector
 
+user_name = input("Enter DB username:")
+passwd = input("Enter DB password:")
 # connecting database server.
 database = mysql.connector.connect(
     host='localhost',
-    user='root',
-    passwd=''
+    user=user_name,
+    passwd=passwd
 )
 
 # cursor object.
