@@ -8,11 +8,11 @@
   {% else %}
     <h1>Customer Relation Manager</h1>
     <br/>
-    <form method='POST', action="{% url 'app:Home' %}">
+    <form method='POST', action="{% url 'app:login' %}">
       {% csrf_token %}
       <form>
         <div class="mb-3">
-          <input type="text" class="form-control" name="user_name", placeholder="User name" required>
+          <input type="text" class="form-control" name="username", placeholder="User name" required>
         </div>
         <div class="mb-3">
           <input type="password" class="form-control" name="password" placeholder="Password" required>
