@@ -2,13 +2,14 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .forms import SignUpForm
-
+from .models import Records
 # Create your views here.
 
 ###### FUNCTION BASED VIEWS ######
 
 def home(request):
-    return render(request=request, template_name='home.html')
+    records = Records.objects.all()
+    return render(request=request, template_name='home.html', context={'records': records})
 
 def login_user(request):
     # check login
@@ -30,7 +31,7 @@ def login_user(request):
             # redirecting to the target view.
             return redirect('app:Home')
         else:
-            messages.MessageFailure(request=request, message="Log in Failed, Please try again.")
+            messages.success(request=request, message="Log in Failed, Please try again.")
             return redirect('app:Home')
     else:
         return render(request=request, template_name='home.html')
@@ -38,6 +39,7 @@ def login_user(request):
 
 def logout_user(request):
     logout(request=request)
+    print("logout catch")
     messages.success(request=request, message="Log out successful")
     return redirect('app:Home')
 
@@ -45,7 +47,9 @@ def logout_user(request):
 def register_user(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
+        print(f"form: {form}")
         if form.is_valid():
+            print("====>>>>form validated")
             form.save()
             return redirect('app:Home')
             # authenticate and login...
@@ -59,4 +63,4 @@ def register_user(request):
     else:
         form = SignUpForm()
         return render(request=request, template_name='register.html', context={'form': form})
-
+    return render(request=request, template_name='register.html', context={'form': form})
