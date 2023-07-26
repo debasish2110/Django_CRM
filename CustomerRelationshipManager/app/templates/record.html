@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="card">
+        <div class="card-header">
+          <h1><strong>Patient Record</strong></h1>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Data for id: {{ cust_rec.id }}</h5>
+          {% comment %} <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> {% endcomment %}
+            <dl>
+                <dt class="label">Patient Name:</dt>
+                <dd>{{ cust_rec.first_name }} {{ cust_rec.last_name }}</dd>
+                <dt class="label">Card Created:</dt>
+                <dd>{{ cust_rec.created_at }}</dd>
+                <dt class="label">Phone:</dt>
+                <dd>{{ cust_rec.phone }}</dd>
+                <dt class="label">E-mail:</dt>
+                <dd>{{ cust_rec.email }}</dd>
+                <dt class="label">Address:</dt>
+                <dd>{{ cust_rec.address }}</dd>
+                <dt class="label">City:</dt>
+                <dd>{{ cust_rec.city }}</dd>
+                <dt class="label">City:</dt>
+                <dd>{{ cust_rec.state }}</dd>
+                <dt class="label">Pin-code:</dt>
+                <dd>{{ cust_rec.pincode }}</dd>
+            </dl>
+          <a href="{% url 'app:Home' %}" class="btn btn-primary">Home</a>
+          <a href="{% url 'app:delete_record' cust_rec.id %}" class="btn btn-danger">Delete</a>
+        </div>
+      </div>
+{% endblock  %}

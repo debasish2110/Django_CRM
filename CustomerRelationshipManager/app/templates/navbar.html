@@ -1,26 +1,29 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand mb-0 h1" href={% url 'app:Home' %}>CRM</a>
+      <a class="navbar-brand mb-0 h1" href={% url 'app:Home' %}>DPC</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">Home</a>
-          </li>
           {% if user.is_authenticated %}
-            <li class="nav-item">
-              <a class="nav-link" href={% url 'app:log_out' %}>Log out</a>
-            </li> 
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'app:add_record' %}">Add Patient</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href={% url 'app:log_out' %}>Log Out</a>
+              </li>
+            </ul> 
           {% else %}
-             <li class="nav-item">
-              <a class="nav-link" href={% url 'app:register' %}>Register</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href={% url 'app:Home' %}>Log in</a>
-            </li>
+            <ul class='navbar-nav ml-auto'>
+              <li class="nav-item">
+                <a class="nav-link" href={% url 'app:register' %}>Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href={% url 'app:Home' %}>Log in</a>
+              </li>
+            </ul>
           {% endif %}
           {% comment %} <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -33,7 +36,6 @@
               <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
           </li> {% endcomment %}
-        </ul>
         {% comment %} <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
