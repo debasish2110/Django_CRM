@@ -1,122 +1,79 @@
 # Django_CRM
-This is a basic Costumer relationship manager app, built using Django and MySQL
+This is a basic Costumer relationship manager app for diagnosis lab, built using Django and MySQL
 ------------
-**Banner**
+## Contents
+* [Banner](#Banner)
+* [Folder Structure](#FolderStructure)
+* [Installations and Instruction](#Installations)
+* [Snapshots](#Snapshots)
+* [Support & Contributions](#Support_and_Contributions)
+----
+
+### Banner
 
 <img src="https://github.com/debasish2110/Django_CRM/blob/master/snapshots/1_log_in_home.png" width="920" height="420">
 
-
-**static code analysis using pylint with flake8 and build status**
-
-[![Python-lint with flake8 and build](https://github.com/debasish2110/265057_Python_Miniproject/actions/workflows/python-app.yml/badge.svg)](https://github.com/debasish2110/265057_Python_Miniproject/actions/workflows/python-app.yml)
-
 -----
-## MyIntro
-**name:** Debashish Dash
-
-**SF_ID:** [265057](https://futureskillsnasscom.edcast.com/@debasishdash98)
-
----
-### folder structure
+### FolderStructure
 
 Folder        | description
 --------------| ----------------------------------------------
-`Implementation`        | This folder contains the source code.
-`ScreenShots`        | screenshots of the code output are placed here.
-`recordings`         | Recordings of how to to run and the outputs.
+`CustomerRelationshipManager`        | This folder contains the source code.
+`snapshots`                          | screenshots of the code output are placed here.
 
-* Open the **[Implementation](https://github.com/debasish2110/265057_Python_Miniproject/tree/master/Implementation)** folder for the source code...
-
-* how to run the code and working output along with the testing is recorded and available in the recordings folder and also uploaded on youtube..
-* link of my youtube video is: https://youtu.be/PQzAt9oarwM
+* Open the **[Project Folder](https://github.com/debasish2110/Django_CRM/tree/master/CustomerRelationshipManager)** folder for the source code...
 
 -----
 ### Installations
 
-The code is written in Python 3.9 and the Os used is Ubuntu 20.04. If you dont have python installed you can find it [here](https://www.python.org/downloads/).
-If you are using a lower version of python then you can upgrade using the pip package, ensuring you have latest version of pip.
-* To run this project you need to first [clone](https://www.howtogeek.com/451360/how-to-clone-a-github-repository/) the repository
+The code is written in Python 3.10 and the Os used is Windows 10. If you dont have python installed you can find it [here](https://www.python.org/downloads/).
+
+mysql shell and server needs to be installed [mySQL-here](https://dev.mysql.com/downloads/installer/).
 
 ```
 # clone the repo
-$ git clone https://github.com/debasish2110/265057_Python_Miniproject.git
+$ git clone https://github.com/debasish2110/Django_CRM.git
 
-# change the working directory to Implementation
-$ cd Implementation
+# change the working directory to CustomerRelationshipManager
+$ cd CustomerRelationshipManager
 =================================
 # install the requirements
 $ pip3 install -r requirements.txt
 =================================
 
-# run the code in linux system 
-$ python3 sudokuSolver.py 
+# run the code to create ur database [one time run required.] 
+$ python mys_db.py
 
-# run the code in windows system
-$ python sudokuSolver.py
+# push the migrations
+$ python manage.py makemigrations
+$ python manage.py migrate
 
-# try Pytest (same for both os)
-$ pytest sudokuSolver.py  
-```
-
-## Directory_Tree
-
-```
-├── .github/workflows
-│   └── python-lint with flike8 and build.yml
-| 
-├── Implementation
-│   ├── src
-|   |   ├── Banner.py
-|   |   ├── cover_page.txt
-|   |   └── difficulty_level_choice.txt
-|   |
-|   ├── Test
-|   |   └── test.py
-|   |
-│   ├── main.py
-|   ├── requirements.txt
-|   └── README.md
-|   
-├── ScreenShots
-|   ├── banner.png
-|   ├── welcome page.png
-|   ├── options.png
-|   ├── solving sudoku roblem.png
-|   ├── exit page.png
-|   └── pytest output.png
-|
-├── recordings
-|   └── code_run_n_test.mp4
-|
-├── .gitignore 
-├── README.md
-└── LICENSE
-
+# run the code
+$ python manage.py runserver
 ```
 -----
+* reach me out for any queries:-> [Instagram](https://www.instagram.com/_da_wanderlust_/) | [twitter](https://twitter.com/Debashish2110) | [Linkedin](https://www.linkedin.com/in/debashish98/)
+
+### Snapshots
+
+**Login**
+
+<img src="https://github.com/debasish2110/Django_CRM/blob/master/snapshots/1_log_in_home.png" height="500" width="950">
+
+**Home page and Dashboard**
+<img src="https://github.com/debasish2110/Django_CRM/blob/master/snapshots/2_record_dashboard.png" height="500" width="950">
+
+**Home page and Dashboard**
+<img src="https://github.com/debasish2110/Django_CRM/blob/master/snapshots/3_complete_details.png" height="500" width="950">
+
+**Add new record**
+<img src="https://github.com/debasish2110/Django_CRM/blob/master/snapshots/4_add_record.png" height="500" width="950">
+
+**Log Out**
+<img src="https://github.com/debasish2110/Django_CRM/blob/master/snapshots/5_logout.png" height="500" width="950">
 
 
-## Contributors List and Summary
-
-PS No. |  Name   |    Features    | Issuess Raised |Issues Resolved|No Test Cases|Test Case Pass
--------|---------|----------------|----------------|---------------|-------------|--------------
-[265057](https://futureskillsnasscom.edcast.com/@debasishdash98) | Debashish  | complete project | X No     | X No   | 5  | 5
-
--------------------------------------------------------------------------
-
-### Future Update Plans,,,
-Working on a feature which will take sudoku problem from user and solve that problem.
-
-### License
-Sudoku Solver is made with ♥ by [Debashish](https://debashishdash.herokuapp.com/) and it is released under [MIT license](https://github.com/debasish2110/265057_Python_Miniproject/blob/master/LICENSE).
-
-### Inspiration
-
-Backtracking algorithm is used in this project and the algorithm is inspired from [tech with tim](https://github.com/techwithtim)... link to which is given below...
-
-<table><tr><td align="center"><a href="https://www.techwithtim.net/tutorials/python-programming/"><img src="https://i.ytimg.com/vi/um4VEJipNQM/maxresdefault.jpg" height="100px;" width="170px;" alt=""/><br /><sub><b>Tech with tim</b></sub></a></td></table>
-
-### Support & Contributions
+### Support_and_Contributions
 - Please ⭐️ this repository if this project helped you!
 - Contributions of any kind is always welcome!
 - Feel free to reach out if you have any query.
