@@ -100,4 +100,16 @@ def add_record(request):
         return redirect('app:Home')
 
 
+def update_record(request, pk):
+    if request.user.is_authenticated:
+        curr_rec = Records.objects.get(id=pk)
+        update_form = AddRecordForm(request.POST or None, instance=curr_rec)
+        if update_form.is_valid():
+            update_form.save()
+            messages.success(request, "Record updated successfully.")
+            return redirect('app:Home')
+        return render(request, 'update_record.html', {'update_form': update_form})
+    else:
+        messages.success(request, "You must login..")
+        return redirect('app:Home')
 

@@ -27,6 +27,7 @@
             </dl>
           <a href="{% url 'app:Home' %}" class="btn btn-primary">Home</a>
           <a href="{% url 'app:delete_record' cust_rec.id %}" class="btn btn-danger">Delete</a>
+          <a href="{% url 'app:update_record' cust_rec.id %}" class="btn btn-secondary">Update</a>
         </div>
       </div>
 {% endblock  %}
