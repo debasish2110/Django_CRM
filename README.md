@@ -3,7 +3,7 @@ This is a basic Costumer relationship manager app, built using Django and MySQL
 ------------
 **Banner**
 
-<img src="https://github.com/debasish2110/265057_Python_Miniproject/blob/master/ScreenShots/banner.png" width="920" height="420">
+<img src="https://github.com/debasish2110/Django_CRM/blob/master/snapshots/1_log_in_home.png" width="920" height="420">
 
 
 **static code analysis using pylint with flake8 and build status**
