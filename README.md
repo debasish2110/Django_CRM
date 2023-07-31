@@ -1,5 +1,5 @@
 # Django_CRM
-This is a basic Costumer relationship manager app for diagnosis lab, built using Django and MySQL
+This is a basic Costumer relationship manager app for a diagnosis lab, built using Django and MySQL
 ------------
 ## Contents
 * [Banner](#Banner)
