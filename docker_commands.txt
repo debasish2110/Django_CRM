@@ -1,0 +1,26 @@
+MYSQL setup:
+=============
+1. cd to Django_CRM\CustomerRelationshipManager\MySQL
+2. docker-compose build
+3. docker-compose up
+
+4. docker container ls
+CONTAINER ID   IMAGE            COMMAND                  CREATED         STATUS         PORTS                               NAMES
+42c627db6e1d   mysql-database   "docker-entrypoint.s…"   9 minutes ago   Up 9 minutes   33060/tcp, 0.0.0.0:3307->3306/tcp   mysql-database-1
+
+
+5. login to container:
+    docker exec -it <containerid>
+
+make migrations after creating the container.
+after login to the container, we can login to mysql shell from bin folder and view out data base and tables
+=================================
+cd bin
+mysql -p<password> -u<username>
+
+show databases;
+use <dbname>;
+=================================
+
+
+
