@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -80,17 +80,33 @@ WSGI_APPLICATION = 'CustomerRelationshipManager.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
-# to use mysql
+# to use mysql in local
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'crm_db',
+#         'USER': 'root',
+#         'PASSWORD': 'r00T#21!',
+#         'HOST': 'localhost',
+#         'PORT': '3306'
+#     }
+# }
+
+# MYSQL IN DOCKER
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'crm_db',
         'USER': 'root',
-        'PASSWORD': '',
+        'PASSWORD': 'r00T#21!',
         'HOST': 'localhost',
-        'PORT': '3306'
+        'PORT': '3307',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        }
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
